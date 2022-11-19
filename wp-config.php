@@ -1,37 +1,4 @@
 <?php
-/**
- * This config file is yours to hack on. It will work out of the box on Pantheon
- * but you may find there are a lot of neat tricks to be used here.
- *
- * See our documentation for more details:
- *
- * https://pantheon.io/docs
- */
-
-/**
- * Pantheon platform settings. Everything you need should already be set.
- */
-if (file_exists(dirname(__FILE__) . '/wp-config-pantheon.php') && isset($_ENV['PANTHEON_ENVIRONMENT'])) {
-	require_once(dirname(__FILE__) . '/wp-config-pantheon.php');
-
-/**
- * Local configuration information.
- *
- * If you are working in a local/desktop development environment and want to
- * keep your config separate, we recommend using a 'wp-config-local.php' file,
- * which you should also make sure you .gitignore.
- */
-} elseif (file_exists(dirname(__FILE__) . '/wp-config-local.php') && !isset($_ENV['PANTHEON_ENVIRONMENT'])){
-	# IMPORTANT: ensure your local config does not include wp-settings.php
-	require_once(dirname(__FILE__) . '/wp-config-local.php');
-
-/**
- * This block will be executed if you are NOT running on Pantheon and have NO
- * wp-config-local.php. Insert alternate config here if necessary.
- *
- * If you are only running on Pantheon, you can ignore this block.
- */
-} else {
 	define('DB_NAME',          'database_name');
 	define('DB_USER',          'database_username');
 	define('DB_PASSWORD',      'database_password');
@@ -57,7 +24,7 @@ if (file_exists(dirname(__FILE__) . '/wp-config-pantheon.php') && isset($_ENV['P
  * You can have multiple installations in one database if you give each a unique
  * prefix. Only numbers, letters, and underscores please!
  */
-$table_prefix = 'wp_';
+$table_prefix = 'kwp_';
 
 /**
  * For developers: WordPress debugging mode.
